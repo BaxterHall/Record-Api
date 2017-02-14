@@ -1,0 +1,191 @@
+* {
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    vertical-align: baseline;
+ }
+
+ 
+.header {
+    background-image: url("/images/recordplayer.jpg");
+    background-size: cover;
+    background-position: 0 -100px; 
+    height: 40%;
+    width: 100%;
+}
+.pageheader {
+    background-color: lightslategrey;
+    
+}   
+.navbar-default{
+    background-color: #e7e7e7;;
+    opacity: 0.7;
+    position: fixed;
+    width: 100%;
+    border: 0px;
+    height: 40px;
+
+}
+ {
+    padding: 20px;
+}
+.active {
+    height: 40px;
+}
+h1 {
+    text-align: center;
+    color: white;
+    margin: 0px;
+    padding: 60px;
+  
+}
+.labelName {
+    text-align: center;
+    color: white;
+    margin: 0px;
+    padding: 60px;
+}
+.baxter {
+    margin: 60px;
+    text-align:center;
+    text-decoration: underline;
+    padding: 0px;
+}
+
+.subLabel, .parentLabel{
+    color: white;
+    text-align: center;
+    padding: -15px;
+}
+.subLabels, .parentLabels {
+    color:black;
+    text-align: center;
+    padding: -10px;
+}
+.media-heading {
+    color:black
+}
+.video {
+    text-align:center;
+    color: black;
+}
+body {
+    background-color: lightgrey;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+table {
+    border-width: 0px;
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+
+.searchSearch {
+    position: absolute;
+    top: 22%;
+    left: 44%;
+}
+
+.searchIndex {
+    position: absolute;
+    top: 47%;
+    left: 44%;
+}
+.searchButton {
+    text-align:center;
+}
+.releasesButton {
+    text-align: center;
+}
+.artistButton {
+    text-align:center;
+}
+.artist-cover { 
+    height: 100px;
+   width: 150px;
+}
+
+.artist-image {
+    position: relative;
+    display: inline-block;
+    left: 30%;
+    padding: 30px;
+    max-height: 450px;
+    max-width: 450px;
+}
+.album-cover {
+    max-height: 80px;
+    max-width: 80px;
+}
+media artist-list-item {
+    margin: 20px;
+}
+.artist-link, .release-link{
+    display: inline-block;
+}
+.favourites{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    padding: 10px;
+    margin: 60px;
+}
+
+.album-image {
+    margin: 40px;
+    max-height: 400px;
+    max-width: 400px;
+}
+.artist {
+    color:black;
+}
+.title {
+    color:black;
+}
+.label-image {
+    margin: 40px;
+    height: 400px;
+    width: 400px;
+
+}
+
+.container2 {
+    margin: 40px;
+    
+}
+
+.container {
+    /*margin-bottom: 14px;*/
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+.results {
+    display: inline-block;
+    padding: 5px;
+    position: relative;
+    left: 5%;
+    width: 200px;
+    height: 200px;
+   
+  
+}
+.image-results {
+    width: 150px;
+    height: 150px;
+}
+footer {
+    text-align: center;
+    background-color:black;
+    position: fixed;
+    width: 100%;
+    opacity: 0.3;
+    color: ghostwhite;
+    bottom: 0px;
+}

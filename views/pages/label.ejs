@@ -1,0 +1,106 @@
+<html>
+
+<head>
+    <title>Label Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+<div class='pageheader'>
+    <div class="headcontainer">
+        <nav class="navbar navbar-default">
+       <ul class="nav navbar-nav">
+            <li class="active">
+                <a href="<%='../'%>">Home</a>
+            </li>
+        
+         </nav>
+   
+         <div id="label-details">
+            <h1 class=labelName>
+                <%=label.name%>
+            </h1>
+             <% if (label.parent_label) {  %>
+            <h2 class="parentLabel">
+                Parent Label:
+            </h2>
+          
+           
+            <h3 class="parentLabels">
+                <a class="parentLabels"href='/label/<%=label.parent_label.id%>'>
+                <%=label.parent_label.name%>
+                </a>
+            </h3>
+            <% } %>
+            <% if (label.sublabels) {%>
+            <h2 class="subLabel">
+                Sublabels:
+            </h2>
+          
+            <% for (i = 0; i < label.sublabels.length; i ++) { %>
+           
+            <h3 class="subLabels">
+                <a class="subLabels"href='/label/<%=label.sublabels[i].id%>'>
+                <%=label.sublabels[i].name%>
+                </a>
+            </h3>
+            <% }  %>
+           
+            <% } %>
+        </div>
+    </div>            
+</div>   
+<main>
+    <div class='container'>       
+        <div class="row">
+            <div class="col-xs-7">
+            <% if (label.images !== undefined) { %>
+                    <img class="label-image" src='<%=label.images[0].uri%>' />
+              <% } %>
+             <% if(label.images === undefined) { %> 
+            <img class="label-image" src='/images/nolabel.png'/>   
+            <% } %> 
+            </div>
+
+           
+            <div class="col-xs-4">
+                <div class="About">
+                <h4>About:</h4>
+                    <p><%=label.profile%></p>
+                </div>
+            </div>
+            <div class="col-xs-8 col-md-12">
+            <h4>Releases:</h4>
+            <table class="table">
+                <% for(let i = 0; i < albums.length; i++) { %>
+                
+                <tr>
+                    <td>
+                        <img class='album-cover' src=<%=(albums[i].thumb === "" ) ? "/images/norelease.png" : albums[i].thumb%> />                  
+                    </td>
+
+                    <td>
+                        <a class="artist" href="/searchresult/<%=albums[i].artist%>">
+                            <%=albums[i].artist%>
+                        </a>
+                    </td>
+                    <td>
+                    <a class="title" href="/releases/<%=albums[i].id%>">
+                        <%=albums[i].title%>
+                    </a>
+                    </td>
+                    <td>Released In:
+                        <%=albums[i].year%>
+                    </td>
+                </tr>
+                <% } %>
+            
+                </div>
+            </div>
+    </div>  
+</main>
+</body>
+</html>
+

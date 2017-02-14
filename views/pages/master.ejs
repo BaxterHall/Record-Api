@@ -1,0 +1,59 @@
+<html>
+<head>
+   <title>Releases</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/styles.css">   
+</head>
+<body>
+<div class='pageheader'>
+    <nav class="navbar navbar-default">
+       <ul class="nav navbar-nav">
+            <li class="active">
+                <a href="<%='../'%>">Home</a>
+            </li>
+            <li class="active">
+                <a href='/artist/<%=album.artists[0].id%>'>Back</a>
+            </li>
+         </nav>
+
+    <h1 class='text-center'><%=album.title%></h1>
+</div>
+<div class='album-details'>
+    <div class="row">
+        <div class="col-xs-5">
+            <img class="album-image" src='<%=album.images[0].uri%>' />
+        </div>
+            <div class="col-xs-7">
+               
+                    <div class='year'>
+                        <h2>Released In <%=album.year%></h2>
+                    </div>
+                    <h3>Tracklisting</h3>
+                    <table class="table">               
+                        
+                         <% for(i=0;i < album.tracklist.length; i++) { %>
+                        
+                         <tr>  
+                           <td><%=album.tracklist[i].title%> - <%=album.tracklist[i].duration%></td>
+                        </tr>
+                    <% } %> 
+                   </table
+            </div>            
+    </div>   
+         
+</div>
+<% if (album.videos !== undefined) { %>
+<div class='video'>
+    <h4>Video</h4>
+    <% for(i=0;i < album.videos.length; i++){%>
+   
+    <iframe max-width="100" max-height="100" src="<%=album.videos[i].uri.replace('watch?v=','embed/')%>" frameborder="0" ></iframe>
+    
+  <% } %>
+</div>
+
+ <% }  %>
+ <div>
+ </div>
+</body>
+</html>

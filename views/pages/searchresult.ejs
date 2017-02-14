@@ -1,0 +1,130 @@
+<html>
+<head>
+   <title>Search Results</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/styles.css">   
+</head>
+<body>
+<div class='pageheader'>
+
+    <nav class="navbar navbar-default">
+       <ul class="nav navbar-nav">
+            <li class="active"><a href="<%='../'%>">Home</a></li>
+         </nav>
+
+    <h1>Search Results</h1>
+</div>  
+  <div class="container2">
+        
+        <form class='searchSearch' action='/searchresult'>
+            <input type='text' name='q' placeholder="Search">
+            </input>
+        </form>
+    </div>
+           
+<div class='container'>
+     <% for(i = 0;i < searched.results.length;i++) { %>
+     
+  
+     <% if (searched.results[i].type === "master") { %>
+    <div class='results'>
+    <a class="master-link" href="/master/<%=searched.results[i].id%>">
+       <table class='results'>
+   
+    <tr>
+        <td>
+        <img class='imageresults' src=<%= (searched.results[i].thumb == "" ) ? 'images/norelease.png' : searched.results[i].thumb %> />
+        </td>
+    </tr>  
+    
+    <tr>
+         <td><%=searched.results[i].title%></td>
+    </tr>
+    
+    <tr>
+        <td><%=searched.results[i].type%></td>
+    </tr>    
+    
+    </table>
+    </a>
+    </div>
+     <% } %>
+
+    <% if (searched.results[i].type === "releases" ) { %>
+    <div class='results'>
+    <a class="release-link" href="/releases/<%=searched.results[i].id%>">
+       <table class='results'>
+   
+    <tr>
+        <td><img class='image-results' src=<%= (searched.results[i].thumb == "" ) ? 'images/norelease.png' : searched.results[i].thumb %> />
+        </td>
+    </tr>  
+    
+    <tr>
+         <td><%=searched.results[i].title%></td>
+    </tr>
+    
+    <tr>
+        <td><%=searched.results[i].type%></td>
+    </tr>    
+    
+    </table>
+    </a>
+    </div>
+     <% } %>
+
+     <% if (searched.results[i].type === "artist") { %> 
+    <div class='results'>
+     <a class="artist-link" href="/artist/<%=searched.results[i].id%>">
+        <table class='results'>
+   
+    <tr>
+        <td><img class='image-results'src=<%= (searched.results[i].thumb === "" ) ? 'images/norelease.png' : searched.results[i].thumb %> />
+        </td>
+    </tr>  
+    
+    <tr>
+         <td><%=searched.results[i].title%></td>
+    </tr>
+    
+    <tr>
+        <td><%=searched.results[i].type%></td>
+    </tr>    
+    
+    </table>
+    </a>
+    </div>
+    <% } %>
+    
+    <% if (searched.results[i].type === "label") { %>
+    <div class='results'>
+    <a class="label-link" href="/label/<%=searched.results[i].id%>">
+       <table class='results'>
+   
+    <tr>
+        <td>
+            <img class='image-results' src=<%= (searched.results[i].thumb == "" ) ? 'images/norelease.png' : searched.results[i].thumb %> />
+        </td>
+    </tr>  
+    
+    <tr>
+         <td><%=searched.results[i].title%></td>
+    </tr>
+    
+    <tr>
+        <td><%=searched.results[i].type%></td>
+    </tr>    
+    
+    </table>
+    </a>
+    </div>
+    <% } %>
+  
+    
+    
+<% } %>
+
+</div>
+
+</body>
+</html>

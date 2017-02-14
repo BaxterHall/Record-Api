@@ -1,0 +1,91 @@
+<html>
+
+<head>
+    <title>Artist Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+<div class='pageheader'>
+    <nav class="navbar navbar-default">
+       <ul class="nav navbar-nav">
+            <li class="active"><a href="<%='../'%>">Home</a></li>
+         </nav>
+
+         <div id="artist-details">
+            <h1>
+                <%=artist.name%>
+            </h1>
+        
+   </div>          
+</div>   
+<main>
+
+    <div class='container'>       
+        <div class="row">
+            <div class="col-xs-6 col-md-12">
+                    <img class="artist-image" src=<%=artist.images ? artist.images[0].uri : '/images/norelease.png' %> />
+            </div>
+                <div class="col-xs-6 col-md-12">
+                    <h4>About</h4>
+                        <table class="table">
+
+                            <tr>
+                                 <td>
+                                    <%=artist.profile%>
+                                </td>
+                            </tr>
+                        </table>
+                </div>
+               
+                <div class="col-xs-6 col-md-12">
+                 <h4 class='discog'>Discography</h4>
+                <table class="table">
+                <% for(let i = 0; i < albums.length; i++) { %>
+                
+                <% if (albums[i].type === 'release') { %>
+                <tr>
+                    
+                    <td>
+                        <img class='album-cover' src=<%= (albums[i].thumb === "" ) ? "/images/norelease.png" : albums[i].thumb %> />
+                    </td>
+                    <td>
+                    <a class="title" href="/releases/<%=albums[i].id%>">
+                        <%=albums[i].title%>
+                    </a>
+                    </td>
+                    <td>Year:
+                        <%=albums[i].year%>
+                    </td>
+                </tr>
+                <% } %>
+                <% if (albums[i].type === 'master') { %>
+                
+                <tr>
+                    <td>
+                        
+                        <img class='album-cover' src=<%= albums[i].thumb === "" ? 'images/norelease.png':albums[i].thumb%> />
+                    </td>
+                    <td>
+                        <a class="title"href="/master/<%=albums[i].id%>">
+                            <%=albums[i].title%>
+                        </a>
+                    </td>
+                    <td>
+                    Year: <%=albums[i].year%>
+                    </td>
+                    <% } %>
+                    <% } %>
+                    </table>
+                </div>
+            </div>
+
+
+           
+    </div>  
+</main>
+</body>
+</html>
+
