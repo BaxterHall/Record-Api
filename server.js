@@ -5,8 +5,7 @@ const cheerio = require('cheerio');
 
 
 const artists = Artists();
-
-
+const albums = Albums()
 
 
 app.set('view engine', 'ejs');
@@ -16,7 +15,7 @@ app.get('/', (req, res) => {
 
 
 
-    res.render('pages/index', { artists });
+    res.render('pages/index', { artists, albums });
 });
 
 app.get('/artist/:id', (req, res) => {
@@ -238,3 +237,41 @@ function Artists() {
         id: "681712",
   }]
 };
+
+function Albums() {
+    return [{
+        name: 'The Agent Intellect',
+        image: 'images/agent.jpg',
+        id: '7561509',
+    },{
+        name: 'The Monitor',
+        image: 'images/monitor.jpg',
+        id: '2172968',
+    }, {
+        name: 'Post-Nothing',
+        image: 'images/post.jpg',
+        id: '1995189',
+    }, {
+        name: 'In Name And Blood',
+        image: 'images/blood.jpg',
+        id: '3243983'
+    }, {
+        name: 'The Age Of Quarrel',
+        image: 'images/quarrel.jpg',
+        id: '1432330',
+    }, {
+        name: 'Reasonable Doubt',
+        image: 'images/doubt.jpg',
+        id: '352213',
+    }, {
+        name: 'Ready To Die',
+        image: 'images/ready.jpg',
+        id: '257768',
+    }, {
+        name: "It's Alive",
+        image: 'images/alive.jpg',
+        id: '888102',   
+    }]
+
+
+}

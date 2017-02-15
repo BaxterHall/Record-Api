@@ -19,11 +19,11 @@
         </form>
     </div>
 <div class='baxter'>
-    <h3 class="baxter">Baxters Favourites</h3>
-</div>
-    <div class="favourites">
+    <h3 class="baxtertext">Baxters Favourites</h3>
 
+        <h4 class="index-text">Artists</h2>
         <% for(i=0;i < artists.length;i++){ %>
+        <div class="favourites1">
 
             <a class="artist-link" href="/artist/<%=artists[i].id%>">
                 <div class="media-body">
@@ -39,9 +39,32 @@
 
                 </div>
             </a>
+            </div>
             <% } %>
 
-    </div>
+        <h4 class="index-text">Albums</h2>
+        <% for(i=0;i < albums.length;i++){ %>
+        <div class="favourites2">
+
+            <a class="artist-link" href="/releases/<%=albums[i].id%>">
+                <div class="media-body">
+                    <h4 class="media-heading">
+                        <%=albums[i].name%>
+                    </h4>
+                </div>
+                <div class="media artist-list-item">
+
+                    <div class="cover-container">
+                        <img class="artist-cover" src=<%=albums[i].image%> />
+                    </div>
+
+                </div>
+            </a>
+            </div>
+            <% } %>
+
+
+ </div>
 
 <footer>
         <h6>"Dont Forget The Struggle, Dont Forget The Streets"</h6>

@@ -25,9 +25,7 @@
     height: 40px;
 
 }
- {
-    padding: 20px;
-}
+
 .active {
     height: 40px;
 }
@@ -47,8 +45,19 @@ h1 {
 .baxter {
     margin: 60px;
     text-align:center;
+    padding: 0px;
+    color: black;
+}
+.baxtertext {
+    text-decoration: underline;
+    
+}
+.index-text {
+    text-align:center;
     text-decoration: underline;
     padding: 0px;
+    color: black;
+    
 }
 
 .subLabel, .parentLabel{
@@ -124,13 +133,21 @@ media artist-list-item {
 .artist-link, .release-link{
     display: inline-block;
 }
-.favourites{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-    padding: 10px;
-    margin: 60px;
+.favourites1{
+    display: inline-block;
+    padding: 0px;
+    position: relative;
+    width: 160px;
+    height: 160px;
 }
+.favourites2{
+    display: inline-block;
+    padding: 0px;
+    position: relative;
+    width: 160px;
+    height: 160px;
+}
+
 
 .album-image {
     margin: 40px;
